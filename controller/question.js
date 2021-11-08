@@ -81,4 +81,16 @@ router.delete('/:id', (req, res) => {
     });
 })
 
+//DELETE questions of a game
+router.delete('/game/delete/:gameid', (req, res) => {
+    let gameId = req.params.gameid;
+    Question.deleteMany({ gameId: gameId }, function (err) {
+        if (err) {
+            res.end(JSON.stringify({ message: "Could not make request." }));
+        } else {
+            res.end(JSON.stringify({ message: "Questions were deleted" }));
+        }
+    });
+})
+
 module.exports = router;
