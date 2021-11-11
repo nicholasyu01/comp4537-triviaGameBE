@@ -3,6 +3,9 @@ const cors = require('cors')
 const mongoose = require("mongoose");
 const bodyParser = require('body-parser');
 const port = process.env.PORT || 5000;
+const morgan = require("morgan");
+const swaggerUI = require("swagger-ui-express");
+const docs = require('./docs');
 
 const game = require("./controller/game");
 const question = require("./controller/question");
@@ -13,6 +16,9 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(morgan("dev"));
+app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(docs));
+
 
 // handles CORS
 app.use(function (req, res, next) {
