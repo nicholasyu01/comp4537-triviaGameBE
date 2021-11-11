@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(morgan("dev"));
-app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(docs));
+app.use('/doc', swaggerUI.serve, swaggerUI.setup(docs));
 
 
 // handles CORS
@@ -43,8 +43,8 @@ mongoose.connect(
 
 // Routes
 // app.use('/api', routes);
-app.use('/api/game', game);
-app.use('/api/question', question);
+app.use('/api/v1/game', game);
+app.use('/api/v1/question', question);
 
 
 app.listen(port, () => console.log(`Server up and running on port ${port} !`));

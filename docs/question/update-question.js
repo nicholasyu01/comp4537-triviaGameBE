@@ -8,7 +8,7 @@ module.exports = {
                 name: "id",
                 in: "path",
                 schema: {
-                    $ref: 'https://comp4537triviagame-api.herokuapp.com/api/question/61807423234d51574c7bd186'
+                    $ref: 'https://comp4537triviagame-api.herokuapp.com/api/v1/question/61807423234d51574c7bd186'
                 },
                 required: true,
                 description: "Id of Question to be updated"
@@ -48,7 +48,7 @@ module.exports = {
                         },
                     }
                 },
-                // $ref: 'https://comp4537triviagame-api.herokuapp.com/api/question/add'
+                // $ref: 'https://comp4537triviagame-api.herokuapp.com/api/v1/question/add'
             }
         },
         responses: {
@@ -56,10 +56,10 @@ module.exports = {
             '200': {
                 description: "Question updated successfully"
             },
-            '404': {
-                description: "Question not found"
-            },
             '400': {
+                description: "Access Denied"
+            },
+            '500': {
                 description: "Server error"
             }
 

@@ -12,7 +12,7 @@ module.exports = {
                 content: {
                     'application/json': {
                         schema: {
-                            $ref: 'https://comp4537triviagame-api.herokuapp.com/api/question'
+                            $ref: 'https://comp4537triviagame-api.herokuapp.com/api/v1/question'
                         },
                         example: {
                             question: 'My Question',
@@ -39,8 +39,11 @@ module.exports = {
                     },
                 },
             },
-            '400': {
+            '500': {
                 description: 'Server error'
+            },
+            '400': {
+                description: 'Access Denied'
             }
         }
     }

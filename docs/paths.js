@@ -12,26 +12,26 @@ const deleteGame = require('./game/delete-game');
 
 module.exports = {
     paths: {
-        '/api/game': {
+        '/api/v1/game': {
             ...getGames,
         },
-        '/api/game/{id}': {
+        '/api/v1/game/{id}': {
             ...getGame,
             ...updateGame,
             ...deleteGame,
         },
-        '/api/game/add': {
+        '/api/v1/game/add': {
             ...createGame,
         },
-        '/api/question': {
+        '/api/v1/question': {
             ...getQuestions,
         },
-        '/api/question/{id}': {
+        '/api/v1/question/{id}': {
             ...getQuestion,
             ...updateQuestion,
             ...deleteQuestion,
         },
-        '/api/question/add': {
+        '/api/v1/question/add': {
             ...createQuestion,
         },
     }

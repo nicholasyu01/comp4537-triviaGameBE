@@ -12,7 +12,7 @@ module.exports = {
                 content: {
                     'application/json': {
                         schema: {
-                            $ref: 'https://comp4537triviagame-api.herokuapp.com/api/game'
+                            $ref: 'https://comp4537triviagame-api.herokuapp.com/api/v1/game'
                         },
                         example: {
                             "_id": "61807423234d51574c7bd186",
@@ -22,8 +22,11 @@ module.exports = {
                     },
                 },
             },
-            '400': {
+            '500': {
                 description: 'Server error'
+            },
+            '400': {
+                description: 'Access Denied'
             }
         }
     }

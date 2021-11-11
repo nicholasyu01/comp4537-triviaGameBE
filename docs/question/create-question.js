@@ -55,15 +55,18 @@ module.exports = {
                         },
                     }
                 },
-                // $ref: 'https://comp4537triviagame-api.herokuapp.com/api/question/add'
+                // $ref: 'https://comp4537triviagame-api.herokuapp.com/api/v1/question/add'
             }
         },
         responses: {
             '200': {
                 description: "Game created successfully"
             },
-            '400': {
+            '500': {
                 description: 'Server error'
+            },
+            '400': {
+                description: 'Access Denied'
             }
         }
     }
