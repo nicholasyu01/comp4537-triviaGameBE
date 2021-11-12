@@ -6,9 +6,12 @@ const port = process.env.PORT || 5000;
 const morgan = require("morgan");
 const swaggerUI = require("swagger-ui-express");
 const docs = require('./docs');
+const passport = require("passport");
 
 const game = require("./controller/game");
 const question = require("./controller/question");
+const user = require("./controller/user");
+const request = require('./controller/request');
 // const routes = require('./api/routes');
 
 const app = express();
@@ -19,6 +22,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(morgan("dev"));
 app.use('/doc', swaggerUI.serve, swaggerUI.setup(docs));
 
+// Passport middleware
+app.use(passport.initialize());
+
+// Passport config
+require("./config/passport")(passport);
 
 // handles CORS
 app.use(function (req, res, next) {
@@ -45,6 +53,8 @@ mongoose.connect(
 // app.use('/api', routes);
 app.use('/api/v1/game', game);
 app.use('/api/v1/question', question);
+app.use('/api/v1/user', user);
+app.use('/api/v1/request', request);
 
 
 app.listen(port, () => console.log(`Server up and running on port ${port} !`));

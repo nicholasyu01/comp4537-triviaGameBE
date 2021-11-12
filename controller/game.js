@@ -49,7 +49,7 @@ router.put('/:id', (req, res) => {
             if (err) {
                 res.end(JSON.stringify({ message: "Could not make request." }));
             } else {
-                res.end(JSON.stringify({ message: "Game was deleted" }));
+                res.end(JSON.stringify({ message: "Game was updated" }));
             }
         });
 });
