@@ -14,6 +14,12 @@ const user = require("./controller/user");
 const request = require('./controller/request');
 // const routes = require('./api/routes');
 
+
+var http = require("http");
+setInterval(function () {
+    http.get("http://comp4537triviagame.herokuapp.com");
+}, 2400000); // every 40 minutes, (300000) is 5 min
+
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
