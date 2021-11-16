@@ -19,7 +19,7 @@ var http = require("http");
 setInterval(function () {
     http.get("http://comp4537triviagame.herokuapp.com");
     http.get("http://comp4537triviagame-api.herokuapp.com");
-}, 2400000); // every 40 minutes, (300000) is 5 min
+}, 300000); // every 5 minutes, (300000) 
 
 const app = express();
 app.use(cors());
